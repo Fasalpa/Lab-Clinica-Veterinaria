@@ -32,6 +32,6 @@ public class Clinica implements Asegurable {
 
     @Override
     public String obtenerNumeroPoliza() {
-        return "";
+        return "POL-CLINICA-" + getNombre();
     }
 }

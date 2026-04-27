@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+
 public class Perro extends Animal implements Vacunable, Asegurable {
 
     private String raza;
+    private ArrayList<String> vacunas = new ArrayList<>();
 
     public Perro(String nombre, int edad, String nombreTitular, String raza) {
         super(nombre, edad, nombreTitular);
         this.raza = raza;
+        this.vacunas = vacunas;
     }
 
     public String getRaza() {
@@ -18,7 +22,7 @@ public class Perro extends Animal implements Vacunable, Asegurable {
     @Override
     public String fichaPresentacion() {
         String data = super.fichaPresentacion();
-        return data + " - El costo de la consulta es: $" + calcularCostoConsulta();
+        return data + ".";
     }
 
     public double calcularCostoConsulta() {
@@ -27,12 +31,12 @@ public class Perro extends Animal implements Vacunable, Asegurable {
 
     @Override
     public void registrarVacuna(String nombre) {
-
+        vacunas.add(nombre);
     }
 
     @Override
     public int getVacunasAplicadas() {
-        return 0;
+        return vacunas.size();
     }
 
     @Override

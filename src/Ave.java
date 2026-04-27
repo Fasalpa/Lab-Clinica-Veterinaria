@@ -22,7 +22,7 @@ public class Ave extends Animal {
     @Override
     public String fichaPresentacion() {
         String data = super.fichaPresentacion();
-        return data + " - El costo de la consulta es: $" + calcularCostoConsulta();
+        return data + ".";
     }
 
 }

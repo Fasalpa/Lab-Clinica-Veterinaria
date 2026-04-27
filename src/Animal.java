@@ -35,8 +35,10 @@ public abstract class Animal {
     }
 
     public String fichaPresentacion() {
-        return "El consultante - " + getNombre() + " de " + getEdad() + " años tiene como titular a: " + getNombreTitular() + " - costo de la cosulta: " + calcularCostoConsulta();
+        return "El consultante - " + getNombre() + " de " + getEdad() + " años tiene como titular a : " + getNombreTitular() + " - costo de la cosulta: " + calcularCostoConsulta();
     }
 
     public abstract double calcularCostoConsulta();
+
+
 }

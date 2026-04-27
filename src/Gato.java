@@ -1,10 +1,14 @@
-public class Gato extends Animal implements Vacunable, Asegurable{
+import java.util.ArrayList;
+
+public class Gato extends Animal implements Vacunable, Asegurable {
 
     private boolean esEsterilizado;
+    private ArrayList<String> vacunas = new ArrayList<>();
 
     public Gato(String nombre, int edad, String nombreTitular, boolean esEsterilizado) {
         super(nombre, edad, nombreTitular);
         this.esEsterilizado = esEsterilizado;
+        this.vacunas = vacunas;
     }
 
     public boolean isEsEsterilizado() {
@@ -15,31 +19,31 @@ public class Gato extends Animal implements Vacunable, Asegurable{
         this.esEsterilizado = esEsterilizado;
     }
 
-    public double calcularCostoConsulta(){
+    public double calcularCostoConsulta() {
         return 38000;
     }
 
     @Override
     public String fichaPresentacion() {
         String data = super.fichaPresentacion();
-        return data + " - El costo de la consulta es: $" + calcularCostoConsulta();
+        return data + ".";
     }
 
     @Override
     public void registrarVacuna(String nombre) {
-
+        vacunas.add(nombre);
     }
 
     @Override
     public int getVacunasAplicadas() {
-        return 0;
+        return vacunas.size();
     }
 
     @Override
     public double calcularPrimaSeguro() {
-        if (esEsterilizado){
+        if (esEsterilizado) {
             return 120000;
-        }else {
+        } else {
             return 200000;
         }
     }
